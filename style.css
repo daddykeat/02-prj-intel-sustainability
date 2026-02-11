@@ -139,7 +139,10 @@ body > p {
 .card:focus {
   outline: 3px solid rgba(0, 104, 181, 0.5);
   outline-offset: 4px;
-}
+
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15);   
+} 
 
 /* ========== RESPONSIVE ADJUSTMENTS ========== */
 @media (max-width: 600px) {
@@ -184,5 +187,67 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 } 
+
+/* ===== Bootstrap section cards ===== */
+.feature-card,
+.subscribe-card{
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+/* Ensure consistent Learn More button sizing */
+.learnmore{
+  padding-inline: 1.25rem;
+}
+
+/* Scroll hint class (instead of body > p selector) */
+.scroll-hint{
+  text-align: center;
+  margin: 0.5rem 0 1rem;
+  color: #333;
+}
+
+/* Footer */
+.site-footer{
+  background: #0068b5;
+  color: white;
+}
+.site-footer a{
+  color: #ffdd57;
+  text-decoration: none;
+}
+.site-footer a:hover{
+  text-decoration: underline;
+}
+
+/* ===== RTL tweaks ===== */
+/* Flip Bootstrap icon spacing when in RTL */
+[dir="rtl"] .me-2{
+  margin-left: .5rem !important;
+  margin-right: 0 !important;
+}
+
+/* Timeline connectors need to flip sides in RTL */
+[dir="rtl"] .card:not(:last-child)::after{
+  right: auto;
+  left: -75px;
+  border-right: none;
+  border-left: 4px solid rgba(0, 104, 181, 0.65);
+  border-top: 4px solid rgba(0, 104, 181, 0.65);
+  border-top-left-radius: 75px;
+  border-top-right-radius: 0;
+}
+
+[dir="rtl"] .card:nth-child(even):not(:last-child)::after{
+  right: auto;
+  left: -75px;
+  border-left: none;
+  border-bottom: 4px solid rgba(0, 104, 181, 0.65);
+  border-right: 4px solid rgba(0, 104, 181, 0.65);
+  border-bottom-right-radius: 75px;
+  border-bottom-left-radius: 0;
+}
 /* ========== END OF STYLESHEET ========== */
 
